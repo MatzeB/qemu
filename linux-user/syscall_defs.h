@@ -2025,6 +2025,8 @@ struct target_statfs64 {
 #define TARGET_O_NOFOLLOW      0x20000 /* don't follow links */
 #define TARGET_O_LARGEFILE     0x40000
 #define TARGET_O_DIRECT        0x100000 /* direct disk access hint */
+#define TARGET_O_NOATIME       0x200000
+#define TARGET_O_CLOEXEC       0x400000
 #elif defined(TARGET_MIPS)
 #define TARGET_O_ACCMODE	0x0003
 #define TARGET_O_RDONLY	0x0000
@@ -2063,6 +2065,7 @@ struct target_statfs64 {
 #define TARGET_O_NOFOLLOW	0x10000	/* don't follow links */
 #define TARGET_O_NOATIME	0x100000
 #define TARGET_O_NDELAY	TARGET_O_NONBLOCK
+#define TARGET_O_CLOEXEC    0x200000
 #else
 #define TARGET_O_ACCMODE          0003
 #define TARGET_O_RDONLY             00
@@ -2081,6 +2084,12 @@ struct target_statfs64 {
 #define TARGET_O_LARGEFILE     0100000
 #define TARGET_O_DIRECTORY     0200000 /* must be a directory */
 #define TARGET_O_NOFOLLOW      0400000 /* don't follow links */
+#endif
+#ifndef TARGET_O_NOATIME
+#define TARGET_O_NOATIME      01000000
+#endif
+#ifndef TARGET_O_CLOEXEC
+#define TARGET_O_CLOEXEC      02000000
 #endif
 
 struct target_flock {
