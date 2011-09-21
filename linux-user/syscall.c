@@ -1156,6 +1156,7 @@ static abi_long do_pipe(void *cpu_env, abi_ulong pipedes,
 {
     int host_pipe[2];
     abi_long ret;
+    flags = target_to_host_bitmask(flags, fcntl_flags_tbl);
     ret = flags ? do_pipe2(host_pipe, flags) : pipe(host_pipe);
 
     if (is_error(ret))
