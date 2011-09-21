@@ -3503,6 +3503,7 @@ case "$target_arch2" in
   ;;
   sparc)
     target_phys_bits=64
+    target_nptl="yes"
   ;;
   sparc64)
     TARGET_BASE_ARCH=sparc

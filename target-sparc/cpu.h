@@ -596,6 +596,11 @@ void cpu_check_irqs(CPUSPARCState *env);
 /* leon3.c */
 void leon3_irq_ack(void *irq_manager, int intno);
 
+static inline void cpu_set_tls(CPUSPARCState *env, target_ulong newtls)
+{
+	env->gregs[R_G7] = newtls;
+}
+
 #if defined (TARGET_SPARC64)
 
 static inline int compare_masked(uint64_t x, uint64_t y, uint64_t mask)
