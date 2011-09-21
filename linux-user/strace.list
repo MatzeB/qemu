@@ -960,6 +960,9 @@
 #ifdef TARGET_NR_pipe
 { TARGET_NR_pipe, "pipe" , NULL, NULL, NULL },
 #endif
+#ifdef TARGET_NR_pipe2
+{ TARGET_NR_pipe2, "pipe2" , NULL, NULL, NULL },
+#endif
 #ifdef TARGET_NR_pivot_root
 { TARGET_NR_pivot_root, "pivot_root" , NULL, NULL, NULL },
 #endif
