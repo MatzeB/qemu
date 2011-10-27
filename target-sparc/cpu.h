@@ -357,6 +357,48 @@ enum {
 #define CACHE_CTRL_FD (1 << 22)  /* Flush Data cache (Write only) */
 #define CACHE_CTRL_DS (1 << 23)  /* Data cache snoop enable */
 
+/* indices for CPUSPARCState.gregs */
+enum sparc_gregs {
+	R_G0,
+	R_G1,
+	R_G2,
+	R_G3,
+	R_G4,
+	R_G5,
+	R_G6,
+	R_G7
+};
+
+/* indices for CPUSPARCState.regwptr */
+enum sparc_regw_regs {
+	R_O0,
+	R_O1,
+	R_O2,
+	R_O3,
+	R_O4,
+	R_O5,
+	R_O6,
+	R_O7,
+
+	R_L0,
+	R_L1,
+	R_L2,
+	R_L3,
+	R_L4,
+	R_L5,
+	R_L6,
+	R_L7,
+
+	R_I0,
+	R_I1,
+	R_I2,
+	R_I3,
+	R_I4,
+	R_I5,
+	R_I6,
+	R_I7
+};
+
 typedef struct SparcTLBEntry {
     uint64_t tag;
     uint64_t tte;
